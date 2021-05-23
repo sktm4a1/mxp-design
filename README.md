@@ -22,3 +22,9 @@ yarn test
 ```sh
 yarn build
 ```
+### 注意事项
+git commit 采用了husky6的钩子，初次使用请如下操作：
+```sh
+npx husky install
+npx husky add .husky/pre-commit 'npx lint-staged'
+```
