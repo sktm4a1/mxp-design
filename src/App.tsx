@@ -4,7 +4,13 @@ import Button from "./components/Button/button";
 function App() {
   return (
     <div className="App">
-      <Button btnType="primary">确定</Button>
+      <Button
+        btnType="primary"
+        className="hahhahah"
+        onClick={(e) => console.log(e.target)}
+      >
+        确定
+      </Button>
     </div>
   );
 }

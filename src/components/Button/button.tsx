@@ -13,24 +13,30 @@ interface BaseButtonProps {
   href?: string;
   children: React.ReactNode;
 }
+type NativeButtonProps = BaseButtonProps &
+  React.ButtonHTMLAttributes<HTMLElement>;
+type AnchorButtonProps = BaseButtonProps &
+  React.AnchorHTMLAttributes<HTMLElement>;
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-const Button: React.FC<BaseButtonProps> = (props) => {
-  const { btnType, size, disabled, children, href } = props;
+const Button: React.FC<ButtonProps> = (props) => {
+  const { btnType, className, size, disabled, children, href, ...restProps } =
+    props;
   // btn btn-lg btn-primary
-  const classes = classNames("btn", {
+  const classes = classNames("btn", className, {
     [`btn-${size}`]: size,
     [`btn-${btnType}`]: btnType,
-    disabled: btnType === "link" && disabled,
+    disabled: disabled,
   });
   if (btnType === "link") {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} href={href} {...restProps}>
         {children}
       </a>
     );
   } else {
     return (
-      <button className={classes} disabled={disabled}>
+      <button className={classes} disabled={disabled} {...restProps}>
         {children}
       </button>
     );
