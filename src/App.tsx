@@ -5,8 +5,9 @@ function App() {
   return (
     <div className="App">
       <Button
-        btnType="primary"
+        btnType="default"
         className="hahhahah"
+        disabled={true}
         onClick={(e) => console.log(e.target)}
       >
         确定

@@ -1,9 +1,12 @@
 import React from "react";
 import classNames from "classnames";
 
-export type ButtonSize = "lg" | "sm";
+const buttonSizes = ["lg", "sm"] as const;
+const buttonTypes = ["default", "primary", "danger", "link"] as const;
 
-export type ButtonType = "default" | "primary" | "danger" | "link";
+export type ButtonSize = typeof buttonSizes[number];
+
+export type ButtonType = typeof buttonTypes[number];
 
 interface BaseButtonProps {
   className?: string;
@@ -28,7 +31,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     [`btn-${btnType}`]: btnType,
     disabled: disabled,
   });
-  if (btnType === "link") {
+  if (btnType === buttonTypes[3]) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
@@ -45,7 +48,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: "default",
+  btnType: buttonTypes[0],
 };
 
 export default Button;
