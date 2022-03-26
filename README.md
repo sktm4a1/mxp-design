@@ -25,8 +25,4 @@ yarn test
 yarn build
 ```
 ### 注意事项
-git commit 采用了husky6的钩子，初次使用请如下操作：
-```sh
-npx husky install
-npx husky add .husky/pre-commit 'npx lint-staged'
-```
+git commit 使用husky@6的钩子，可能需要chmod 777 pre-commit文件授予可执行权限：

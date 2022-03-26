@@ -24,14 +24,14 @@ const Menu: React.FC<MenuProps> = (props) => {
   });
   const handleClick = (index: number) => {
     setCurActive(index);
-    onSelect && onSelect(index);
+    onSelect?.(index);
   };
   const passedContext: IMenuContex = {
     index: curActive ?? 0,
     onSelect: handleClick,
   };
   return (
-    <ul className={classes} style={style}>
+    <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
         {children}
       </MenuContext.Provider>
