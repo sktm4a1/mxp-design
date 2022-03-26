@@ -12,9 +12,9 @@ function App() {
         <MenuItem index={2}>cool link3</MenuItem>
       </Menu>
       <Button
-        btnType="default"
+        btnType="primary"
         className="hahhahah"
-        disabled={true}
+        disabled={false}
         onClick={(e) => console.log(e.target)}
       >
         确定
