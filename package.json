@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
 	"eject": "react-scripts eject",
-	"commit":"git cz"
+	"commit":"git cz",
+	"prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
