@@ -37,12 +37,12 @@ describe("test Menu and MenuItem Component", () => {
     disableEl = wrapper.getByText("disabled");
   });
 
-  it("should render correct menu and menuItem with default props", () => {
+  it("should render correct menu and menu-item with default props", () => {
     expect(menuEl).toBeInTheDocument();
     expect(menuEl).toHaveClass("mxp-menu test");
     expect(menuEl.getElementsByTagName("li").length).toEqual(3);
-    expect(activeEl).toHaveClass("mxp-menuItem is-active");
-    expect(disableEl).toHaveClass("mxp-menuItem is-disabled");
+    expect(activeEl).toHaveClass("mxp-menu-item is-active");
+    expect(disableEl).toHaveClass("mxp-menu-item is-disabled");
   });
   it("click item should change active and call the right callback function", () => {
     const thirdItem = wrapper.getByText("xyz");

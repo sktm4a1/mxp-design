@@ -22,6 +22,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const [curActive, setCurActive] = useState(defaultIndex);
   const classes = classNames("mxp-menu", className, {
     "menu-vertical": mode === "vertical",
+    "menu-horizontal": mode !== "vertical",
   });
   const handleClick = (index: number) => {
     setCurActive(index);
@@ -35,7 +36,10 @@ const Menu: React.FC<MenuProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement =
         child as React.FunctionComponentElement<MenuItemProps>;
-      if (childElement.type.displayName === "MenuItem") {
+      if (
+        childElement.type.displayName === "MenuItem" ||
+        childElement.type.displayName === "SubMenu"
+      ) {
         return React.cloneElement(childElement, { index });
       } else {
         console.error("Warning:Menu only accept MenuItem as child");
