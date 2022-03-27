@@ -7,7 +7,7 @@ import SubMenu from "./components/Menu/subMenu";
 export default function App() {
   return (
     <div className="App" data-testid="app">
-      <Menu>
+      <Menu mode="vertical" defaultOpenSubMenus={["2"]}>
         <MenuItem>cool link</MenuItem>
         <MenuItem disabled>cool link2</MenuItem>
         <SubMenu title="dropdown">
