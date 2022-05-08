@@ -12,13 +12,13 @@ export interface MenuProps {
   onSelect?: SelectCallback;
   defaultOpenSubMenus?: string[];
 }
-interface IMenuContex {
+interface IMenuContext {
   index: string;
   onSelect?: SelectCallback;
   mode?: MenuMode;
   defaultOpenSubMenus?: string[];
 }
-export const MenuContext = createContext<IMenuContex>({ index: "0" });
+export const MenuContext = createContext<IMenuContext>({ index: "0" });
 
 const Menu: React.FC<MenuProps> = (props) => {
   const {
@@ -39,7 +39,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     setCurActive(index);
     onSelect?.(index);
   };
-  const passedContext: IMenuContex = {
+  const passedContext: IMenuContext = {
     index: curActive ?? "0",
     onSelect: handleClick,
     mode,
