@@ -5,14 +5,12 @@ import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import Icon from "./components/Icon/icon";
 library.add(fas);
 
 export default function App() {
   return (
     <div className="App" data-testid="app">
-      <Icon icon="arrow-down" theme="danger" size="10x" />
-      <Menu mode="vertical" defaultOpenSubMenus={["2"]}>
+      <Menu mode="horizontal">
         <MenuItem>cool link</MenuItem>
         <MenuItem disabled>cool link2</MenuItem>
         <SubMenu title="dropdown">
