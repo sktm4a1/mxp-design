@@ -5,9 +5,14 @@ import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import VirtualList from "./components/VirtualList/virtualList";
 library.add(fas);
 
 export default function App() {
+  let virtualDatas = [];
+  for (let i = 0; i < 10000; i++) {
+    virtualDatas.push({ value: i + 1 });
+  }
   return (
     <div className="App" data-testid="app">
       <Menu mode="horizontal">
@@ -27,6 +32,7 @@ export default function App() {
       >
         确定
       </Button>
+      <VirtualList data={virtualDatas} />
     </div>
   );
 }
