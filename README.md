@@ -3,6 +3,9 @@
 # Mxp-Design
 
 一个适用于react项目的组件库
+- node版本推荐16
+- 使用的是node-sass而非dart-sass（即sass）
+- storybook@7 + webpack5（react-scripts@5）
 
 ## 本地预览
 ```sh

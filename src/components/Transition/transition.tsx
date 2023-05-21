@@ -1,5 +1,4 @@
-import React from "react";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group"; // 动画
 import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 
 type AnimationName =
@@ -18,7 +17,7 @@ export default function Transition(props: TransitionProps) {
     children,
     classNames,
     animation,
-    wrapper,
+    wrapper, // 解决多个transition彼此覆盖的问题
     appear = true,
     unmountOnExit = true,
     ...restProps

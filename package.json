@@ -2,6 +2,19 @@
   "name": "mxp-design",
   "version": "0.0.1",
   "private": false,
+  "author": {
+    "name": "maxinpeng"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "commit": "git cz",
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -17,21 +30,12 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-transition-group": "^4.4.4",
     "classnames": "^2.3.1",
-    "node-sass": "4.12.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.2",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "commit": "git cz",
-    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -52,11 +56,25 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-interactions": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/addon-styling": "^1.0.8",
+    "@storybook/blocks": "^7.0.12",
+    "@storybook/preset-create-react-app": "^7.0.12",
+    "@storybook/react": "^7.0.12",
+    "@storybook/react-webpack5": "^7.0.12",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0"
+    "node-sass": "^6.0.1",
+    "prop-types": "^15.8.1",
+    "sass-loader": "^10.0.1",
+    "storybook": "^7.0.12",
+    "webpack": "^5.83.1"
   },
   "husky": {
     "hooks": {

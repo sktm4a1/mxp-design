@@ -11,7 +11,7 @@ const VirtualList = (props: VirtualListProps) => {
   const [start, setStart] = useState(0);
   const [visibleCount, setVisibleCount] = useState<number>(0);
   const [visibleData, setVisibleData] = useState<
-    Pick<VirtualListProps, "data">["data"]
+    PickValueType<VirtualListProps, "data">
   >([]);
   const virtualRef = useRef<HTMLDivElement>(null);
   const virtualContentRef = useRef<HTMLDivElement>(null);
@@ -21,22 +21,18 @@ const VirtualList = (props: VirtualListProps) => {
     setVisibleCount(count);
     setVisibleData(data.slice(start, start + count + 5));
     //  使用交叉观察器
-    let io = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (enteies) => {
         for (let entry of enteies) {
-          if (entry.intersectionRatio > 0) {
-            console.log(
-              entry.intersectionRatio,
-              entry.isIntersecting,
-              entry.intersectionRect
-            );
+          const { intersectionRatio, intersectionRect, isIntersecting } = entry;
+          if (intersectionRatio > 0) {
+            console.log(intersectionRatio, isIntersecting, intersectionRect);
           }
         }
       },
       { root: document.querySelector(".virtual-list") }
     );
-    const target = document.querySelector(".virtual-list-content")!;
-    io.observe(target);
+    io.observe(document.querySelector(".virtual-list-content")!);
     return () => {
       io.disconnect();
     };
@@ -57,7 +53,7 @@ const VirtualList = (props: VirtualListProps) => {
       <div className="virtual-list-content" ref={virtualContentRef}>
         {visibleData.map((c) => (
           <div className="virtual-list-item" key={c.value}>
-            数据:{c.value}
+            数据: {c.value}
           </div>
         ))}
       </div>
