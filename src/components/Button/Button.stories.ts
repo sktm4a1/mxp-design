@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  parameters: { layout: "fullscreen" },
+  argTypes: {},
 };
 
 export default meta;
@@ -18,6 +18,7 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
   args: {
+    /** 按钮类型 */
     btnType: "primary",
     children: "Primary",
     onClick() {
