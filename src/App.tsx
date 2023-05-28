@@ -1,14 +1,14 @@
 import { useState } from "react";
+import VirtualList from "./components/VirtualList/virtualList";
 import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import VirtualList from "./components/VirtualList/virtualList";
 import Icon from "./components/Icon/icon";
 import Input from "./components/Input";
-library.add(fas); // 引入所有图标
+
+// import { Button, Menu, Icon, Input } from "../dist";
+// const MenuItem = Menu.Item, SubMenu = Menu.SubMenu;
 
 export default function App() {
   const genVirtualDatas = (length: number) =>
