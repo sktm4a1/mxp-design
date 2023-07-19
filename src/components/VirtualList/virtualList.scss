@@ -1,16 +1,15 @@
 .virtual-list {
   height: 300px;
-  box-sizing: content-box;
-  overflow: auto;
   border: 1px solid #666;
+  overflow: auto;
   position: relative;
   &-zhanwei,
-  &-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-  }
+  // &-content {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  // }
   &-zhanwei {
     z-index: -1;
   }
