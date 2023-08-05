@@ -10,15 +10,17 @@ jobs:
     name: build_and_deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
+      - name: 切换分支
         uses: actions/checkout@v3
         
-      - name: Install and Build
-        run: 
+      - name: 装包且构建
+        run: |  # 运行多条shell命令
           npm install
           npm run build
+          ls
+          echo ================build end======================
           
-      - name: Deploy
+      - name: 部署
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with: # 带着两个参数
           branch: gh-pages  # 部署提交分支
