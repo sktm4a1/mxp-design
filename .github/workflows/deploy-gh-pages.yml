@@ -16,7 +16,7 @@ jobs:
       - name: Set Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x' # Use a compatible version
+          node-version: '16.x' # Use a compatible version
         
       - name: Add Packages And Build
         run: |                               # 运行多条shell命令
@@ -27,7 +27,7 @@ jobs:
           ls -lha
           echo ================build end======================
           
-      - name: 部署
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with: # 带着两个参数
           branch: gh-pages              # 部署提交分支
