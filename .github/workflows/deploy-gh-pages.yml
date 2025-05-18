@@ -10,10 +10,15 @@ jobs:
     name: build_and_deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 切换分支
+      - name: Checkout Git Branch
         uses: actions/checkout@v3
+
+      - name: Set Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x' # Use a compatible version
         
-      - name: 装包且构建
+      - name: Add Packages And Build
         run: |                               # 运行多条shell命令
           npm install -g yarn
           yarn install
