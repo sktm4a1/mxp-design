@@ -10,9 +10,10 @@ import Input from "./components/Input";
 // import { Button, Menu, Icon, Input } from "../dist";
 // const MenuItem = Menu.Item, SubMenu = Menu.SubMenu;
 
+const genVirtualData = (length: number) =>
+  Array.from({ length }, (v, key) => ({ value: ++key }));
+
 export default function App() {
-  const genVirtualDatas = (length: number) =>
-    Array.from({ length }, (v, key) => ({ value: ++key }));
   const [inputVal, setInputVal] = useState<string>();
 
   return (
@@ -46,7 +47,7 @@ export default function App() {
         style={{ width: 300 }}
         defaultValue={"www.baidu"}
       />
-      <VirtualList data={genVirtualDatas(100)} />
+      <VirtualList data={genVirtualData(100)} />
     </div>
   );
 }
