@@ -2,32 +2,37 @@
 
 # MXP-Design
 
-一个适用于react项目的组件库
-- node版本推荐16
-- 使用的是node-sass而非dart-sass（即sass）
-- storybook@7 + webpack5（react-scripts@5）
+一个适用于 react 项目的组件库
+
+-   node 版本推荐 16
+-   使用的是 node-sass 而非 dart-sass（即 sass）
+-   storybook@7 + webpack5（react-scripts@5）
 
 ## 本地预览
+
 ```sh
 #克隆项目
-git clone 
+git clone
 #安装依赖
-yarn install 
+pnpm install
 #启动运行
-yarn start
-# yarn build-storybook
+pnpm start
+# pnpm build-storybook
 ```
 
 ### 测试项目
-```sh
-yarn test
-```
 
+```sh
+pnpm test
+```
 
 ### 构建项目
+
 ```sh
-yarn build
+pnpm build
 ```
+
 ### 注意事项
-1、git commit 使用husky@6的钩子，可能需要chmod 777 pre-commit文件授予可执行权限：
-2、增加github workflows脚本
+
+1、git commit 使用 husky@6 的钩子，可能需要 chmod 777 pre-commit 文件授予可执行权限：
+2、增加 github workflows 脚本

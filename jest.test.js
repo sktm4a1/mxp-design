@@ -1,11 +1,11 @@
 // npx jest jest.test.js --watch
-test("2+2=4",() => {
-	expect(2+2).toBe(4);
-})
+test("2+2=4", () => {
+    expect(2 + 2).toBe(4);
+});
 
-test ("test object",() => {
-	expect({name:"mxp"}).toEqual({name:"mxp"})
-})
-test('test bool',() => {
-	expect(3).toBeTruthy()
-})
+test("object", () => {
+    expect({ name: "mxp" }).toEqual({ name: "mxp" });
+});
+test("bool", () => {
+    expect(3).toBeTruthy();
+});
