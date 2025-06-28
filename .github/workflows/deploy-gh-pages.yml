@@ -20,7 +20,7 @@ jobs:
 
             - name: Add Packages And Build
               run: | # 运行多条shell命令
-                  npm install -g pnpm
+                  npm install -g pnpm@8.15.8
                   pnpm install
                   pnpm build-storybook
                   echo =========产物如下===================
